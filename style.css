@@ -1,0 +1,18 @@
+.error {
+    color: red;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 15px;
+}
+.display-image{
+    width: 200px;
+    height:200px;
+}
