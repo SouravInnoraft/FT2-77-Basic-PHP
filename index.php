@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <h1>My Form</h1>
     <form action="/" method="post" enctype="multipart/form-data">
         <label for="First_Name">First Name</label><br>
@@ -27,4 +26,5 @@
 include "form.php";
 ?>
 <script src="script.js"></script>
+
 </html>

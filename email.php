@@ -1,25 +1,15 @@
 <?php
     if(isset($_POST["submit"])){
+        
         $email=$_POST["email"];
         $msg="";
-        if(strpos($email, "@")!=false){
-        for($i=0;$i<strlen($email);$i++){
-            if(($email[$i]>='a' && $email[$i]<='z')||
-            ($email[$i]>='0' && $email[$i]<='9') ||
-            ($email[$i]=='@' || $email[$i]=='_' || $email[$i]=='.')
-            ) {
-                continue;
-            }
-            else{
-                $msg="Invalid email";
-                break;
-            }
+        $email_pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+        if(preg_match($email_pattern, $email)){
+            $msg = "valid";
         }
-    }else{
-        $msg="Invalid email";
+        else {
+            $msg = "invalid";
+        }
     }
-       if(strlen($msg)===0){
-         $msg="Valid email Address"."$email";
-       }
-    }
+    
 ?>

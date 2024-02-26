@@ -24,7 +24,7 @@
     </div>
 </body>
 <?php
-// include "output.php";
+include "output.php";
 ?>
 <script src="script.js"></script>
 
