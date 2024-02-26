@@ -19,8 +19,6 @@
     ?>
   </p>
   <a href="logout.php"></a>
-
-
 </body>
 
 </html>

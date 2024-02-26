@@ -3,7 +3,7 @@
 }
 body{
     background-color: aqua;
-    
+
 }
 .container{
     max-width: 600px;
@@ -43,5 +43,3 @@ input{
     display: block;
     width: 60px;
 }
-
-

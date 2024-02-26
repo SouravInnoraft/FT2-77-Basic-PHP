@@ -6,6 +6,3 @@ function changeName() {
 }
 firstName.addEventListener("input", changeName);
 secondName.addEventListener("input", changeName);
-
-
-

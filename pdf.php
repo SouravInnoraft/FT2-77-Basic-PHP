@@ -1,6 +1,6 @@
 <?php
 require('./fpdf186/fpdf.php');
-
+//creating an object of fpdf
 $pdf = new FPDF();
 
 $pdf->AddPage();
@@ -44,8 +44,7 @@ for ($i = 1; $i < count($data); $i++) {
   $pdf->Ln();
 }
 $width = $pdf->GetPageWidth();
-
-
+//store the pdf in local store
 $pdf->Output('F', "pdfs/{$fname}.pdf");
-
+//download the pdf
 $pdf->Output('D', "{$fname}.pdf");
