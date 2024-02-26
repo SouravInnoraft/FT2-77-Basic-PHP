@@ -2,7 +2,7 @@
 /**
  * Requests for Email data
  *
- * @param [mixed] $url
+ * @param mixed $url
  * @return string
  */
 function request($url): string{

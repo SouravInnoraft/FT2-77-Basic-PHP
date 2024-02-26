@@ -16,9 +16,7 @@ if (
   parse_str($_SERVER['QUERY_STRING'], $parameters);
 
   if (isset($parameters['q'])) {
-     /**
-      * Valid parameter check
-      */
+     //Valid parameter check
     if ($parameters['q'] > 0 && $parameters['q'] <= 7) {
       include "{$parameters['q']}.php";
     } else {
@@ -28,9 +26,7 @@ if (
     }
   }
 } else {
-  /**
-   * Nagivate to the Login page 
-   */
+  //Nagivate to the Login page
   header("location:/sessions/login.php");
 }
 ?>
