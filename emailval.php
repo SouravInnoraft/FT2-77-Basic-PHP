@@ -1,4 +1,5 @@
 <?php
+
 require('creds.php');
 require('EmailValidator.php');
 

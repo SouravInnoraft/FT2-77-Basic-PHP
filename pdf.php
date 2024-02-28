@@ -2,9 +2,9 @@
 
 require('./fpdf186/fpdf.php');
 
-//Creating an object of fpdf.
+// Creating an object of fpdf.
 $pdf = new FPDF();
-//Adding a new page.
+// Adding a new page.
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 12);
 $fname = $_POST['First_Name'];
@@ -20,7 +20,7 @@ for ($x = 0; $x < count($myArray); $x++) {
   $tdata = [$sub[0], $sub[1]];
   array_push($tabledata, $tdata);
 }
-//Adding data into the pdf.
+// Adding data into the pdf.
 $pdf->Cell(40, 10, 'User Data');
 $pdf->Ln();
 $pdf->Cell(40, 10, 'FirstName: ' . $fname);
@@ -46,7 +46,7 @@ for ($i = 1; $i < count($data); $i++) {
   }
   $pdf->Ln();
 }
-//Store the pdf in local store.
+// Store the pdf in local store.
 $pdf->Output('F', 'pdfs/{$fname}.pdf');
-//download the pdf.
+// Download the pdf.
 $pdf->Output('D', '{$fname}.pdf');

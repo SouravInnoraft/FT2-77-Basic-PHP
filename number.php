@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST['submit'])) {
   $number = $_POST['phone_number'];
   $message = '';
