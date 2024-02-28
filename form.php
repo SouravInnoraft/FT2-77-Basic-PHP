@@ -14,7 +14,13 @@ if (isset($_POST['submit'])) {
 //If image upload is successful display the image else display an error message.
 if ($img_upload === 'successful') {
   echo "<img src='$target_file' alt='#' class='display-image'>";
+
+?>
+<br>
+<?php
   echo 'Uploaded succesfully';
 } else if ($img_upload === 'unsuccessful') {
   echo 'Uploaded not succesful';
 }
+?>
+<br>

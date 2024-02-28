@@ -7,7 +7,7 @@
 </head>
 <body class='container'>
   <h1>My Form</h1>
-  <form action='index.php' method='post' enctype='multipart/form-data'>
+  <form action='/' method='post' enctype='multipart/form-data'>
     <label for='First_Name'>Last Name</label>
     <input type='text' name='First_Name' id='t1' pattern='[A-Za-z]+'
     placeholder='Enter Your First Name' required>
