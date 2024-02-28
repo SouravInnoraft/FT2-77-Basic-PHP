@@ -47,6 +47,6 @@ for ($i = 1; $i < count($data); $i++) {
   $pdf->Ln();
 }
 // Store the pdf in local store.
-$pdf->Output('F', 'pdfs/{$fname}.pdf');
+$pdf->Output('F', "pdfs/{$fname}.pdf");
 // Download the pdf.
-$pdf->Output('D', '{$fname}.pdf');
+$pdf->Output('D', "{$fname}.pdf");

@@ -20,7 +20,7 @@ if ($img_upload === 'successful') {
 <br>
 <?php
   echo 'Uploaded succesfully';
-} else if ($img_upload === 'unsuccessful') {
+} elseif ($img_upload === 'unsuccessful') {
   echo 'Uploaded not succesful';
 }
 ?>
