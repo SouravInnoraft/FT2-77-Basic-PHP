@@ -1,8 +1,8 @@
 <?php
+
 require('requests.php');
 
-class EmailValidator
-{
+class EmailValidator{
   /**
    * Checks whether the email is valid or not
    *

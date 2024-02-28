@@ -49,10 +49,10 @@ textarea {
 }
 
 textarea::placeholder {
-    text-align: center;
-    line-height: 30px;
+  text-align: center;
+  line-height: 30px;
 
-  }
+}
 
 
 input {

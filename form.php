@@ -18,4 +18,3 @@ if ($img_upload === 'successful') {
 } else if ($img_upload === 'unsuccessful') {
   echo 'Uploaded not succesful';
 }
-?>

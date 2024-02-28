@@ -1,6 +1,7 @@
 <?php
 
 require('./fpdf186/fpdf.php');
+
 //Creating an object of fpdf.
 $pdf = new FPDF();
 //Adding a new page.
