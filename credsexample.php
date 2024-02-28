@@ -1,3 +1,4 @@
 <?php
-$api_key = "";
-$url = "";
+$api_key = '';
+$url = '';
+?>

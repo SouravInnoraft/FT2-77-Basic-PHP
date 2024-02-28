@@ -1,23 +1,25 @@
 <?php
-require('./fpdf186/fpdf.php');
-//creating an object of fpdf
-$pdf = new FPDF();
 
+require('./fpdf186/fpdf.php');
+//Creating an object of fpdf.
+$pdf = new FPDF();
+//Adding a new page.
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 12);
-$fname = $_POST["First_Name"];
-$lname = $_POST["Last_Name"];
-$number = $_POST["phone_number"];
-$email = $_POST["email"];
-$subjects = $_POST["comment"];
+$fname = $_POST['First_Name'];
+$lname = $_POST['Last_Name'];
+$number = $_POST['phone_number'];
+$email = $_POST['email'];
+$subjects = $_POST['comment'];
 
-$myArray = preg_split("/\r\n|\n|\r/", $subjects);
+$myArray = preg_split('/\r\n|\n|\r/', $subjects);
 $tabledata = [[]];
 for ($x = 0; $x < count($myArray); $x++) {
-  $sub = explode("|", $myArray[$x]);
+  $sub = explode('|', $myArray[$x]);
   $tdata = [$sub[0], $sub[1]];
   array_push($tabledata, $tdata);
 }
+//Adding data into the pdf.
 $pdf->Cell(40, 10, 'User Data');
 $pdf->Ln();
 $pdf->Cell(40, 10, 'FirstName: ' . $fname);
@@ -28,7 +30,7 @@ $pdf->Cell(40, 10, 'Phone Number: ' . $number);
 $pdf->Ln();
 $pdf->Cell(40, 10, 'Email: ' . $email);
 $pdf->Ln();
-$header = array("subject", "Marks");
+$header = array('subject', 'Marks');
 $data = $tabledata;
 $width_cell = array(30, 30);
 $pdf->SetFillColor(193, 229, 252);
@@ -43,8 +45,7 @@ for ($i = 1; $i < count($data); $i++) {
   }
   $pdf->Ln();
 }
-$width = $pdf->GetPageWidth();
-//store the pdf in local store
-$pdf->Output('F', "pdfs/{$fname}.pdf");
-//download the pdf
-$pdf->Output('D', "{$fname}.pdf");
+//Store the pdf in local store.
+$pdf->Output('F', 'pdfs/{$fname}.pdf');
+//download the pdf.
+$pdf->Output('D', '{$fname}.pdf');

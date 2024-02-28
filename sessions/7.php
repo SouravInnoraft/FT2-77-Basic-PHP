@@ -15,7 +15,7 @@
     link but only after login.
     Ex: if i want the 4th question, i click on abc.com?q=4.
   </div>
-
+  <a href="logout.php"><input type="button" value="logout"></a>
 </body>
 
 </html>

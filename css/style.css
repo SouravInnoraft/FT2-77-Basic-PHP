@@ -1,0 +1,66 @@
+.error {
+  color: red;
+}
+
+body {
+  background-color: aqua;
+
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+textarea {
+  padding: 10px 30px;
+}
+
+.display-image {
+  width: 400px;
+  height: 400px;
+}
+
+label,
+input {
+  display: block;
+}
+
+label,
+input,
+textarea {
+  margin-block: 5px;
+
+}
+
+textarea::placeholder {
+    text-align: center;
+    line-height: 30px;
+
+  }
+
+
+input {
+  width: 400px;
+  padding: 5px;
+}
+
+.submit {
+  display: block;
+  width: 60px;
+}

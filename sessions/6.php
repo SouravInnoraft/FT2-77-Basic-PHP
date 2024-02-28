@@ -13,8 +13,8 @@
     created in a doc format. One will store on the server and the other
     will be downloaded to the user submitting the data. The information
     in the doc should be presented in a well-defined manner.
-
   </div>
+  <a href="logout.php"><input type="button" value="logout"></a>
 </body>
 
 </html>

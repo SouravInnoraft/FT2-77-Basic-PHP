@@ -1,13 +1,12 @@
 <?php
-/**
- * Start the session
- */
+//Start the session.
 session_start();
 if (isset($_POST["submit"])) {
   $_SESSION["fname"] = $_POST["fname"];
   $_SESSION["lname"] = $_POST["lname"];
   $_SESSION["email"] = $_POST["email"];
 }
+//Checks if all the variable in the session are set or not
 if (
   isset($_SESSION["fname"]) && isset($_SESSION["lname"]) &&
   isset($_SESSION["email"])

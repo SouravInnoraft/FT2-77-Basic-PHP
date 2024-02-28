@@ -1,9 +1,12 @@
 <?php
+
 /**
  * Requests for Email data
  *
  * @param mixed $url
+ *
  * @return string
+ *  Returns the user data.
  */
 function request($url): string{
   $ch = curl_init($url);

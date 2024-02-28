@@ -1,17 +1,14 @@
 <?php
-if (isset($_POST["submit"])) {
+if (isset($_POST['submit'])) {
   $number = $_POST['phone_number'];
-  $message = "";
+  $message = '';
   $len = strlen($number);
   $check_91 = substr($number, 0, 3);
-  if ($check_91 !== "+91" or $len !== 13) {
-    $message = "Invalid number";
+  if ($check_91 !== '+91' or $len !== 13) {
+    $message = 'Invalid number';
   } else {
-    $message = "Number is submitted successfully " . "the number is " .
+    $message = 'Number is submitted successfully ' . 'the number is ' .
       $number;
   }
 }
-?>
-<?php
 echo "$message";
-?>

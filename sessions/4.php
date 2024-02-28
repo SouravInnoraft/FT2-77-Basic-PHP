@@ -13,8 +13,7 @@
     user. The number will belong to an Indian user.
     So, the number should begin with +91 and not be more than 10 digits.
   </div>
-
+  <a href="logout.php"><input type="button" value="logout"></a>
 </body>
 
 </html>
-

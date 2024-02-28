@@ -13,6 +13,7 @@
     the format, English|80. One subject in each line. Once values entered and
     submitted, accept them to display the values in the form of a table.
   </div>
+  <a href="logout.php"><input type="button" value="logout"></a>
 </body>
 
 </html>

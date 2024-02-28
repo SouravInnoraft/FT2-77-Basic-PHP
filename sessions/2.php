@@ -13,5 +13,7 @@
     On submit store the image in the backend and display it
     with the full name below it.
   </div>
+  <a href="logout.php"><input type="button" value="logout"></a>
 </body>
+
 </html>
