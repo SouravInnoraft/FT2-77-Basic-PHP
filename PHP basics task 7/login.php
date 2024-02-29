@@ -2,21 +2,17 @@
 
 session_start();
 
-if (
-  isset($_SESSION['fname']) && isset($_SESSION['lname']) &&
-  isset($_SESSION['email'])
-) {
+if (isset($_SESSION['fname']) && isset($_SESSION['lname']) &&
+isset($_SESSION['email'])) {
   header('location:/sessions/session_validations.php');
 }
 
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
   <div class="container">
     <form action="session_validations.php" method="post">
@@ -50,5 +46,4 @@ if (
     </form>
   </div>
 </body>
-
 </html>

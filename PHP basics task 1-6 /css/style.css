@@ -2,14 +2,20 @@
   color: red;
 }
 
-body {
-  background-color: aqua;
-
+body{
+  background-color: cadetblue;
 }
 
 .container {
-  max-width: 600px;
+  background-color: brown;
+  width: 500px;
+  padding: 10px;
+  border-radius: 20px;
   margin: 0 auto;
+   form{
+     width: 80%;
+     margin: 0 auto;
+   }
 }
 
 h1 {
@@ -20,6 +26,10 @@ table,
 th,
 td {
   border: 1px solid black;
+}
+table{
+   background-color: white;
+   width: 400px;
 }
 
 th,
@@ -45,15 +55,12 @@ label,
 input,
 textarea {
   margin-block: 5px;
-
 }
 
 textarea::placeholder {
   text-align: center;
   line-height: 30px;
-
 }
-
 
 input {
   width: 400px;
@@ -63,4 +70,12 @@ input {
 .submit {
   display: block;
   width: 60px;
+}
+
+.display{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }

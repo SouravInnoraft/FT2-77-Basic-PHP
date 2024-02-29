@@ -47,7 +47,6 @@ input[type=submit]:hover {
   margin-top: 6px;
 }
 
-
 .row::after {
   content: "";
   display: table;

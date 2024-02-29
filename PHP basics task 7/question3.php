@@ -1,24 +1,21 @@
 <?php
 
-require("./Valid.php");
+require('./Valid.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
   <div class="container">
-    Add a new field to accept user image in addition to the above fields.
-    On submit store the image in the backend and display it
-    with the full name below it.
+    Add a text area to the above form and accept marks of different subjects in
+    the format, English|80. One subject in each line. Once values entered and
+    submitted, accept them to display the values in the form of a table.
   </div>
   <a href="logout.php"><input type="button" value="logout"></a>
 </body>
-
 </html>

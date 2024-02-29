@@ -7,7 +7,8 @@ if (isset($_POST['submit'])) {
   $check_91 = substr($number, 0, 3);
   if ($check_91 !== '+91' or $len !== 13) {
     $message = 'Invalid number';
-  } else {
+  }
+  else {
     $message = 'Number is submitted successfully ' . 'the number is ' .
       $number;
   }

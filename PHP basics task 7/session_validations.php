@@ -3,7 +3,7 @@
 // Start the session.
 session_start();
 
-require("./Valid.php");
+require('./Valid.php');
 
 if (isset($_POST['submit'])) {
   $_SESSION['fname'] = $_POST['fname'];
@@ -28,7 +28,8 @@ if (
 <?php
     }
   }
-} else {
+}
+else {
   // Nagivate to the Login page.
   header('location:/sessions/login.php');
 }
