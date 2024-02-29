@@ -13,6 +13,6 @@ function end_session() {
   // Destroy the session.
   session_destroy();
   // Navigate to the login page.
-  header('location:/sessions/login.php');
+  header('location:login.php');
   exit;
 }
