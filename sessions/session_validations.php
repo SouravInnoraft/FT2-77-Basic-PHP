@@ -2,6 +2,9 @@
 
 // Start the session.
 session_start();
+
+require("./Valid.php");
+
 if (isset($_POST['submit'])) {
   $_SESSION['fname'] = $_POST['fname'];
   $_SESSION['lname'] = $_POST['lname'];
@@ -18,7 +21,7 @@ if (
   if (isset($parameters['q'])) {
     // Checks if parameter value lies in range or not.
     if ($parameters['q'] > 0 && $parameters['q'] <= 7) {
-      include "{$parameters['q']}.php";
+      include "question{$parameters['q']}.php";
     } else {
 ?>
       <h1>Invalid query</h1>

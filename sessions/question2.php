@@ -1,3 +1,8 @@
+<?php
+
+require("./Valid.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +14,9 @@
 
 <body>
   <div class="container">
-    When the user submits the above form, 2 copies of the data will get
-    created in a doc format. One will store on the server and the other
-    will be downloaded to the user submitting the data. The information
-    in the doc should be presented in a well-defined manner.
+    Add a new field to accept user image in addition to the above fields.
+    On submit store the image in the backend and display it
+    with the full name below it.
   </div>
   <a href="logout.php"><input type="button" value="logout"></a>
 </body>

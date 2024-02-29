@@ -1,3 +1,8 @@
+<?php
+
+require("./Valid.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

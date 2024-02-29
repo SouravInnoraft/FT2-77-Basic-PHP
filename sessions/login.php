@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+if (
+  isset($_SESSION['fname']) && isset($_SESSION['lname']) &&
+  isset($_SESSION['email'])
+) {
+  header('location:/sessions/session_validations.php');
+}
+
+?>
 <!DOCTYPE html>
 <html>
 

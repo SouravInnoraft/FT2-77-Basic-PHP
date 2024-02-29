@@ -1,3 +1,8 @@
+<?php
+
+require("./Valid.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +14,8 @@
 
 <body>
   <div class="container">
-    Add a text area to the above form and accept marks of different subjects in
-    the format, English|80. One subject in each line. Once values entered and
-    submitted, accept them to display the values in the form of a table.
+    Add a new single text field to the above form that will accept email id.
+    Do not use email id input field type.
   </div>
   <a href="logout.php"><input type="button" value="logout"></a>
 </body>
