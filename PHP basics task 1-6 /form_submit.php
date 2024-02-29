@@ -9,7 +9,7 @@
 <body>
   <div class="display">
     <?php
-    require 'input.php';
+    require 'output.php';
     ?>
   </div>
 </body>

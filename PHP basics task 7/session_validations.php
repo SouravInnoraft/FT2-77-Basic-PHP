@@ -22,7 +22,8 @@ if (
     // Checks if parameter value lies in range or not.
     if ($parameters['q'] > 0 && $parameters['q'] <= 7) {
       include "question{$parameters['q']}.php";
-    } else {
+    }
+    else {
 ?>
       <h1>Invalid query</h1>
 <?php
