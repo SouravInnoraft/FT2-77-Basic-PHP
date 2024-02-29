@@ -10,7 +10,7 @@ $Ev = new EmailValidator();
 // It will either return TRUE or false.
 $result=$Ev->validateEmail($email, $api_key);
 // If the result is TRUE it prints that it is valid , else it prints not valid.
-if($result==TRUE){
+if($result===TRUE){
   echo "$email is a valid email address";
 }
 else{

@@ -9,7 +9,7 @@
 
 <body>
   <div class="container">
-    <form action='index.php' method='post' enctype='multipart/form-data'>
+    <form action='form_submit.php' method='post' enctype='multipart/form-data'>
       <h1>My Form</h1>
       <label for='First_Name'>Last Name</label>
       <input type='text' name='First_Name' id='t1' pattern='[A-Za-z]+'
@@ -31,14 +31,6 @@
   </div>
   <script src='./Script/script.js'></script>
   <div class="display">
-    <?php
-    require 'input.php';
-    require 'number.php';
-    require 'form.php';
-    require 'emailCall.php';
-    require 'pdf.php';
-
-    ?>
   </div>
 </body>
 
