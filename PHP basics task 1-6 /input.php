@@ -24,7 +24,8 @@ if (isset($_POST['submit'])) {
 
       <?php } ?>
     </table>
-<?php } else {
+<?php }
+  else {
     echo 'Invalid marks';
   }
 }

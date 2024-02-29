@@ -37,12 +37,12 @@ $width_cell = array(30, 30);
 $pdf->SetFillColor(193, 229, 252);
 
 for ($i = 0; $i < count($header); $i++) {
-  $pdf->Cell($width_cell[$i], 10, $header[$i], 1, 0, 'C', true);
+  $pdf->Cell($width_cell[$i], 10, $header[$i], 1, 0, 'C', TRUE);
 }
 $pdf->Ln();
 for ($i = 1; $i < count($data); $i++) {
   for ($j = 0; $j < 2; $j++) {
-    $pdf->Cell($width_cell[$j], 10, $data[$i][$j], 1, 0, 'C', true);
+    $pdf->Cell($width_cell[$j], 10, $data[$i][$j], 1, 0, 'C', TRUE);
   }
   $pdf->Ln();
 }

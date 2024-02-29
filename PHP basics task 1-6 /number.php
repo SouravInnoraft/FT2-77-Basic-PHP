@@ -13,4 +13,6 @@ if (isset($_POST['submit'])) {
       $number;
   }
 }
-echo "$message";
+?>
+<p><?= $message ?></p>
+<?php

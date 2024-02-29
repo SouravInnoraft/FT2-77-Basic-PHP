@@ -14,18 +14,18 @@ class EmailValidator {
    *   User's api key.
    *
    * @return bool
-   *   Returns true if email address is valid else returns false.
+   *   Returns TRUE if email address is valid else returns false.
    */
   public function validateEmail(string $email, mixed $api_key):bool {
     $url2 = 'https://emailvalidation.abstractapi.com/v1/
     ?api_key=$api_key&email=$email';
     // Calls the API and Decode the json file received.
-    $result = json_decode(request($url2), true);
+    $result = json_decode(request($url2), TRUE);
     // Validate the format and smtp.
     // If both condition satisfies it prints the email is valid , else it is not.
     if ($result['is_valid_format']['value'] &&
     $result['is_smtp_valid']['value']) {
-       return true;
+       return TRUE;
     }
     else {
       return false;
