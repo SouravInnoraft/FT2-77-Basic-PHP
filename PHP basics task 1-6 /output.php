@@ -2,8 +2,8 @@
 
 // Displays the Full name.
 if (isset($_POST['submit'])) {
-  $first_name = $_POST['First_Name'];
-  $last_name = $_POST['Last_Name'];
+  $first_name = $_POST['first_Name'];
+  $last_name = $_POST['last_Name'];
 ?>
   <p>Hello<?= " $first_name $last_name" ?></p>
 <?php

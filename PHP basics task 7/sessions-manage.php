@@ -5,6 +5,7 @@
  *   Used for terminating the existing session.
  *
  */
+
 function end_session() {
   // Establish a session.
   session_start();

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Requests for Email data
+ * Requests for Email data.
  *
  * @param mixed $url
- *
+ *   Url of the website the user will be providing.
  * @return string
  *   Returns the user data.
  */
