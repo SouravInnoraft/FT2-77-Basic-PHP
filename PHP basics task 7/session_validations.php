@@ -3,17 +3,17 @@
 // Start the session.
 session_start();
 
-require('./Valid.php');
-
 if (isset($_POST['submit'])) {
-  $_SESSION['fname'] = $_POST['fname'];
-  $_SESSION['lname'] = $_POST['lname'];
-  $_SESSION['email'] = $_POST['email'];
+  if($_POST['name']==='Sourav Chandra' && $_POST['password']==='sourav123'){
+    $_SESSION['name'] = $_POST['name'];
+    $_SESSION['password'] = $_POST['password'];
+  }
 }
+
+require('./Valid.php');
 // Checks if all the variable in the session are set or not.
 if (
-  isset($_SESSION['fname']) && isset($_SESSION['lname']) &&
-  isset($_SESSION['email'])
+  isset($_SESSION['name']) && isset($_SESSION['password'])
 ) {
   include './header.php';
   parse_str($_SERVER['QUERY_STRING'], $parameters);
@@ -32,6 +32,6 @@ if (
 }
 else {
   // Nagivate to the Login page.
-  header('location:/sessions/login.php');
+  header('location:login.php');
 }
 ?>

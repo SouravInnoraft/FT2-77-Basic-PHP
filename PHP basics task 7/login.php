@@ -1,9 +1,6 @@
 <?php
-
 session_start();
-
-if (isset($_SESSION['fname']) && isset($_SESSION['lname']) &&
-isset($_SESSION['email'])) {
+if (isset($_SESSION['name']) && isset($_SESSION['password'])) {
   header('location:session_validations.php');
 }
 
@@ -18,26 +15,18 @@ isset($_SESSION['email'])) {
     <form action="session_validations.php" method="post">
       <div class="row">
         <div class="col-25">
-          <label for="fname">First Name</label>
+          <label for="name">Name</label>
         </div>
         <div class="col-75">
-          <input type="text" id="fname" name="fname" placeholder="Your name..">
+          <input type="text" id="name" name="name" placeholder="Your name..">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="lname">Last Name</label>
+          <label for="password">Password</label>
         </div>
         <div class="col-75">
-          <input type="text" id="lname" name="lname" placeholder="Your last name..">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="email">Email</label>
-        </div>
-        <div class="col-75">
-          <input type="text" id="email" name="email" placeholder="Your email address">
+          <input type="password" id="password" name="password" placeholder="Your password">
         </div>
       </div>
       <div class="row">

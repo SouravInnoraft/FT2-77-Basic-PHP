@@ -3,9 +3,8 @@
 <head>
 </head>
 <body>
-  <p>firstname <?=$_SESSION['fname'];?></p>
-  <p>Lastname<?=$_SESSION['lname'];?></p>
-  <p>Email<?=$_SESSION['email'];?></p>
+  <p>Name : <?=$_SESSION['name'];?></p>
+  <p>Pasword : <?=$_SESSION['password'];?></p>
   <a href='logout.php'></a>
 </body>
 </html>
