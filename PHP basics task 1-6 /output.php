@@ -15,6 +15,7 @@
     }
     $input_value = $_POST['comment'];
     $input_data = explode("\n", $input_value);
+    $regex_marks = '/^[a-z]+[ ]*\|[ ]*[0-9]{1,3}$/i';
     for ($i = 0; $i < count($input_data); $i++) {
 
       // Trimming any whitespaces at the beginning and end of the string.
@@ -35,7 +36,6 @@
     }
     // Check for valid Pattern.
     $number = $_POST['phone_number'];
-    $message = '';
     $len = strlen($number);
     $check_91 = substr($number, 0, 3);
     if ($check_91 !== '+91' or $len !== 13) {
@@ -70,16 +70,18 @@
     <?php
 
     // Uploads and displays image.
+    $target_file = './images/' . $_FILES['image']['name'];
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
     ?>
       <img src=<?= $target_file ?> alt='#'>
     <?php
     }
-
     // Validates a phone number.
-    $message = 'Number is submitted successfully ' . 'the number is ' . $number;
+    ?>
+    <p>Number is submitted successfully the number is <?= $number ?></p>
+    <?php
   }
-  else {
+    else {
     ?>
     <ul>
       <?php
