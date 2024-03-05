@@ -18,7 +18,6 @@ li {
 .container {
   margin: auto;
   width: 100vw;
-
 }
 
 .content {
@@ -27,9 +26,23 @@ li {
   justify-content: space-evenly;
 }
 
-.bgimg {
+.bg-image {
   width: 500px;
   height: 500px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.dp-image {
+  width: 80px;
+  height: 80px;
+
+  img {
+    display: inline;
+    width: 100%;
+  }
 }
 
 .title {
@@ -40,11 +53,6 @@ li {
   .title {
     color: #ff7900;
   }
-}
-
-.dpimg {
-  width: 80px;
-  height: 80px;
 }
 
 .btn {
