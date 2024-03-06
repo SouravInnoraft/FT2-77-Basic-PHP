@@ -11,19 +11,23 @@ use PHPMailer\PHPMailer\Exception;
 
 if (isset($_POST['submit'])) {
   $email = $_POST['email'];
+
   // Create an instance.
   $mail = new PHPMailer(true);
   $mail->isSMTP();
-  require 'cred.php';
+  require 'creds.php';
   setUserData($mail);
   try {
     sendMail($mail,$email);
+
     // Content.
     sendMailData($mail);
+
     // If mail is send display a success Message.
     $mail->send();
     echo 'Message has been sent';
-  } catch (Exception $e) {
+  }
+  catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
   }
 }

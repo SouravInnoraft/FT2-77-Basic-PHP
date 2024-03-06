@@ -30,7 +30,7 @@ class API {
     $url = 'https://www.innoraft.com/jsonapi/node/services';
     $response = json_decode(request($url), true);
     $data = $response['data'];
-    for ($i = 12; $i < 16; $i++) {
+    for ($i = 12; $i < count($data); $i++) {
 
       // Appending all the titles.
       array_push($this->title, $data[$i]['attributes']['field_secondary_title']['value']);

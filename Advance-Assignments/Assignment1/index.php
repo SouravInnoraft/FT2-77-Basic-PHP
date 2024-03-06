@@ -76,7 +76,8 @@
           </div>
         </div>
       <?php
-      } else {
+      }
+      else {
       ?>
         <div class="content">
           <div class="left">

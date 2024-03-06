@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class='container'>
-    <form action='Mail.php' method="post" class="myForm">
+    <form action='./Mail.php' method="post" class="myForm">
       <div class="row"><label for='email'>Email</label>
         <input type='text' required placeholder='Enter Your Email' name='email'>
       </div>
