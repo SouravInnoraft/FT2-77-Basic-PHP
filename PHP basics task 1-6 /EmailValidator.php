@@ -21,8 +21,7 @@ class EmailValidator {
    */
 
   public function validateEmail(string $email, mixed $api_key):bool {
-   $url2 = "https://emailvalidation.abstractapi.com/v1/
-    ?api_key =$api_key&email=$email";
+    $url2 = "https://emailvalidation.abstractapi.com/v1/?api_key=$api_key&email=$email";
     // Calls the API and Decode the json file received.
     $result = json_decode(request($url2), TRUE);
     // Validate the format and smtp.

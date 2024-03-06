@@ -18,9 +18,11 @@
     $input_data[$i] = preg_replace('/[ ]/', '', $input_data[$i]);
     if (!preg_match($regex_marks, $input_data[$i])) {
       $marks_error = 1;
-      echo 'Incorrect Marks Format at line ' . $i + 1;
     }
   }
+  $target_file = './images/' . $_FILES['image']['name'];
+  $pdf->Image($target_file, 150, 10, 50, 35, '', '');
+
   if (!$marks_error) {
     $table_data = [[]];
 
@@ -60,4 +62,3 @@
     // Download the pdf.
     $pdf->Output('D', "{$fname}.pdf");
   }
-}

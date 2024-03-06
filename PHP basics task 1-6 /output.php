@@ -4,10 +4,10 @@
 
   <?php
   $error_array = array();
-  $name_regex = '/^[a-z]+$/i';
+  $name_regex = '/^[A-Za-z]+$/i';
   if (isset($_POST['submit'])) {
-    $first_name = $_POST['first_Name'];
-    $last_name = $_POST['last_Name'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
 
     // Pattern matching for both first and last name.
     if (!preg_match($name_regex, $first_name) || !preg_match($name_regex, $last_name)) {
@@ -15,7 +15,7 @@
     }
     $input_value = $_POST['comment'];
     $input_data = explode("\n", $input_value);
-    $regex_marks = '/^[a-z]+[ ]*\|[ ]*[0-9]{1,3}$/i';
+    $regex_marks = '/^[A-Za-z0-9]+\|(?:[1-9][0-9]?|100)$/';
     for ($i = 0; $i < count($input_data); $i++) {
 
       // Trimming any whitespaces at the beginning and end of the string.
@@ -80,6 +80,7 @@
     ?>
     <p>Number is submitted successfully the number is <?= $number ?></p>
     <?php
+    require 'emailCall.php';
   }
     else {
     ?>

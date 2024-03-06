@@ -5,7 +5,7 @@ require('EmailValidator.php');
 
 $emailError = 0;
 $email = $_POST["email"];
-$regex_email = '/^[\w._]+@[\w]+(\.[a-z]{2,}){0,2}$/i';
+$regex_email = "/^[\w._]+@[\w]+(\.[a-z]{2,}){0,2}$/i";
 $email = strtolower($email);
 // Check for Email pattern.
 if (!preg_match($regex_email, $email)) {
@@ -21,7 +21,8 @@ if (!$emailError) {
   // If the result is TRUE it prints that it is valid , else it prints not valid.
   if ($result) {
     echo "$email is a valid email address";
-  } else {
+  }
+  else {
     echo "$email is a not valid email address";
   }
 }
