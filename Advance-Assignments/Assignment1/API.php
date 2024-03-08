@@ -1,4 +1,5 @@
 <?php
+
 require 'ApiCall.php';
 
 /**
@@ -27,7 +28,7 @@ class API {
    */
 
   public function setData() {
-    $url = 'https://www.innoraft.com/jsonapi/node/services';
+    require_once 'creds.php';
     $response = json_decode(request($url), true);
     $data = $response['data'];
     for ($i = 12; $i < count($data); $i++) {

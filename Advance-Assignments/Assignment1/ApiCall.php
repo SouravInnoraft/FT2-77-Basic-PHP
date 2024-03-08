@@ -1,5 +1,6 @@
 <?php
 
+require './vendor/autoload.php';
 /**
  * Function to request an Url using curl.
  *
@@ -11,12 +12,7 @@
  */
 
 function request(mixed $url): mixed {
-  $ch = curl_init($url);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $response = curl_exec($ch);
-  if ($error = curl_error($ch)) {
-    echo $error;
-  }
-  curl_close($ch);
-  return $response;
+  $client = new \GuzzleHttp\Client();
+  $response = $client->request('GET', $url);
+  return $response->getBody();
 }
