@@ -23,13 +23,24 @@ class API {
   // For storing section image.
   public $section_image = [];
 
+  // Url instance variable.
+  private $url;
+
+  /**
+   * Constructor function for setting url.
+   *
+   * @param string $url
+   *   User provided url
+   */
+  function __construct(string $url) {
+     $this->url=$url;
+  }
   /**
    * Function to fetch and Set requested data.
    */
 
   public function setData() {
-    require_once 'creds.php';
-    $response = json_decode(request($url), true);
+    $response = json_decode(request($this->url), true);
     $data = $response['data'];
     for ($i = 12; $i < count($data); $i++) {
 

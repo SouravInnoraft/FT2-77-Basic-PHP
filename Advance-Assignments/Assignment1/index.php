@@ -8,11 +8,11 @@
 </head>
 <body>
   <?php
-
+  require 'creds.php';
   require 'API.php';
 
   // Creating an Instance of API.
-  $services_request = new API();
+  $services_request = new API($url);
 
   // Calling the Function to set data.
   $services_request->setData();
