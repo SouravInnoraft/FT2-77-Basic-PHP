@@ -60,7 +60,6 @@ textarea {
 }
 
 textarea::placeholder {
-  text-align: center;
   line-height: 30px;
 }
 

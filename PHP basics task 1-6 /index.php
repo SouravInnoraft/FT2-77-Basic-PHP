@@ -20,10 +20,9 @@
       pattern='[A-Za-z]+' placeholder='Enter Your Last Name' required>
       <label for='full_Name'>Full Name</label>
       <input type='text' name='full_Name' value='' disabled id='t3'>
-      <textarea rows='10' cols='40' name='comment'
-      placeholder='Enter Marks of students here in Subject|Marks pattern format'>
-    </textarea>
-      <input type='text' name='phone_number' minlength='13' pattern="[0-9]+"
+      <textarea rows='10' cols='40'
+      name='comment'placeholder='Enter Marks Subject|Marks pattern format'></textarea>
+      <input type='text' name='phone_number' minlength='13' pattern="[+0-9]+"
       maxlength='13' value='+91' placeholder='Enter mobile number'>
       <input type='text' name='email' placeholder='submit-email'
        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">

@@ -17,10 +17,8 @@
     $input_data = explode("\n", $input_value);
     $regex_marks = '/^[A-Za-z0-9]+\|(?:[1-9][0-9]?|100)$/';
     for ($i = 0; $i < count($input_data); $i++) {
-
       // Trimming any whitespaces at the beginning and end of the string.
       $input_data[$i] = trim($input_data[$i]);
-
       // Cleaning up spaces in the string.
       $input_data[$i] = preg_replace('/[ ]/', '', $input_data[$i]);
       if (!preg_match($regex_marks, $input_data[$i])) {
@@ -44,10 +42,9 @@
   }
 
   if (!count($error_array)) {
-
     // Displays the Full name.
   ?>
-    <p>Hello<?= "$first_name $last_name" ?></p>
+    <p>Hello <?= "$first_name $last_name" ?></p>
     <?php
 
     // Displays the Marks in tabular manner.
@@ -80,7 +77,9 @@
     ?>
     <p>Number is submitted successfully the number is <?= $number ?></p>
     <?php
-    require 'emailCall.php';
+    // require 'emailCall.php';
+    // For storing pdf.
+    require 'pdf.php';
   }
     else {
     ?>
