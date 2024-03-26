@@ -7,7 +7,6 @@ require '../Database.php';
 session_start();
 
 if (isset($_POST['submit'])) {
-  echo "Hello";
   $email = $_POST['email'];
   $database=new Database($username,$password, $dbname);
   $isExist=$database->isExistingUser($email);
