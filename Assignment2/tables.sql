@@ -74,7 +74,7 @@ e1.employee_id=e2.employee_id
 inner join
 employee_code_table as e3
 on
-e2.employee_code=e3.employee_code
+e2.employee_code = e3.employee_code
 where
 employee_domain !='Java';
 
@@ -102,7 +102,7 @@ e1.employee_code=e2.employee_code
 group by
 employee_domain
 having
-total_salary >= 30k;
+total_salary >= 30;
 
 -- 7
 select

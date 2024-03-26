@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./Css/style.css">
 </head>
+
 <body>
+  <?php
+
+  if (isset($_GET['message'])) {
+  ?>
+    <p><?=$_GET['message']?></p>
+  <?php
+  }
+  ?>
   <div class="container">
-    <form action="Database.php" method="post">
+    <form action="DatabaseCall.php" method="post">
       <div class="row">
         <div class="col-25">
           <label for="employee_code">Employee code</label>
@@ -41,7 +51,7 @@
           <input type="text" id="employee_id" name="employee_id" placeholder="Enter Employee Id...">
         </div>
       </div>
-       <div class="row">
+      <div class="row">
         <div class="col-25">
           <label for="employee_salary">Employee salary</label>
         </div>
@@ -79,4 +89,5 @@
     </form>
   </div>
 </body>
+
 </html>

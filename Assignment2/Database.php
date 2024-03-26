@@ -24,9 +24,9 @@ class Database {
   public $conn;
 
   // Varibles for inserting data into tables.
-  private $sql1;
-  private $sql2;
-  private $sql3;
+  private $sql_insert_employee_code_table;
+  private $sql_insert_employee_salary_table;
+  private $sql_insert_employee_details_table;
 
   /**
    * Constructor function to initialize the database.
@@ -38,7 +38,7 @@ class Database {
    *   User selected database.
    */
 
-  function __construct(mixed $username,mixed $password, mixed $dbname) {
+  public function __construct(mixed $username,mixed $password, mixed $dbname) {
     $this->username=$username;
     $this->password=$password;
     $this->dbname=$dbname;
@@ -53,26 +53,26 @@ class Database {
    * A function to insert data into a particular table.
    */
 
-  function insertIntoDataBase() {
-    $this->sql1 = "INSERT INTO
+  public function insertIntoDataBase() {
+    $this->sql_insert_employee_code_table= "INSERT INTO
     employee_code_table (employee_code, employee_code_name, employee_domain)
     VALUES
-    ('" . $_POST['employee_code'] . "', '". $_POST['employee_code_name'] . "', '" . $_POST['employee_domain'] . "')";
+    ('{$_POST['employee_code']}', '{$_POST['employee_code_name']}', '{$_POST['employee_domain']}')";
 
-    $this->sql2 = "INSERT INTO
+    $this->sql_insert_employee_salary_table = "INSERT INTO
     employee_salary_table (employee_id, employee_salary, employee_code)
     VALUES
-    ('" . $_POST['employee_id'] . "', '". $_POST['employee_salary'] . "', '" . $_POST['employee_code'] . "')";
+    ('{$_POST['employee_id']}', '{$_POST['employee_salary']}', '{$_POST['employee_code']}')";
 
-    $this->sql3 = "INSERT INTO
+    $this->sql_insert_employee_details_table = "INSERT INTO
     employee_details_table (employee_id, employee_first_name, employee_last_name,Graduation_percentile)
     VALUES
-     ('" . $_POST['employee_id'] . "', '". $_POST['employee_first_name'] . "', '" . $_POST['employee_last_name'] . "','" . $_POST['graduation_percentile'] . "')";
+     ('{$_POST['employee_id']}', '{$_POST['employee_first_name']}', '{$_POST['employee_last_name']}','{$_POST['graduation_percentile']}')";
 
      if (
-    $this->conn->query($this->sql1)===TRUE and
-    $this->conn->query($this->sql2)===TRUE and
-    $this->conn->query($this->sql3)===TRUE
+    $this->conn->query($this->sql_insert_employee_code_table)and
+    $this->conn->query($this->sql_insert_employee_salary_table) and
+    $this->conn->query($this->sql_insert_employee_details_table)
     ) {
 ?>
       <p>New record created successfully and inserted into the database</p>
@@ -89,17 +89,7 @@ class Database {
    * A function to close database.
    */
 
-  function closeDB() {
+  public function closeDB() {
     $this->conn->close();
   }
 }
-
-// Creating an instance of Database class.
-$myDb = new Database($username,$password,$dbname);
-
-// Call the function to insert data into table.
-$myDb->insertIntoDataBase();
-
-// Close the DB.
-$myDb->closeDB();
-
