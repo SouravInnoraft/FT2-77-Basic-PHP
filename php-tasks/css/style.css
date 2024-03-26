@@ -1,0 +1,106 @@
+.error {
+  color: red;
+}
+
+body{
+  background-color: cadetblue;
+}
+
+.container {
+  background-color: rgb(23, 168, 35);
+  width: 500px;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0 auto;
+   form{
+     width: 80%;
+     margin: 0 auto;
+   }
+}
+
+a{
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+table{
+   background-color: rgb(177, 99, 99);
+   width: 400px;
+   text-align: center;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+textarea {
+  padding: 10px 30px;
+}
+
+.display-image {
+  width: 400px;
+  height: 400px;
+}
+
+label,
+input {
+  display: block;
+}
+
+label,
+input,
+textarea {
+  margin-block: 5px;
+}
+
+textarea::placeholder {
+  line-height: 30px;
+}
+
+input {
+  width: 400px;
+  padding: 5px;
+}
+
+.submit {
+  display: block;
+  width: 60px;
+}
+
+.display{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.output{
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: larger;
+      background-color: tomato;
+      color: antiquewhite;
+      gap: 10px;
+}
+.button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  text-align: center;
+}
