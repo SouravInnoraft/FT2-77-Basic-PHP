@@ -1,9 +1,7 @@
 <?php
 
 /**
- * Function to end a session.
- *   Used for terminating the existing session.
- *
+ * Function to end a session used for terminating the existing session.
  */
 
 function end_session() {
@@ -16,7 +14,7 @@ function end_session() {
 
   // Destroy the session.
   session_destroy();
-  
+
   // Navigate to the login page.
   header('location:login.php');
 }

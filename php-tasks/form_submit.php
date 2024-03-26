@@ -9,7 +9,7 @@
 <body>
   <div class="display">
     <?php
-    require 'output.php';
+    require 'OutputCall.php';
     ?>
   </div>
 </body>

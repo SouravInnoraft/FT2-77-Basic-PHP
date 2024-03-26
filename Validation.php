@@ -2,14 +2,6 @@
 require 'Database.php';
 require 'creds.php';
 
-session_start();
-
-// Check that if the sessions variables are set or not.
-if(!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
-  $notloggedin = urlencode("Can't access the page if you are not logged in.");
-  header('location:login.php?notloggedin=' . $notloggedin);
-}
-
 /**
  * A class to Validate the user.
  */
@@ -17,7 +9,8 @@ if(!isset($_SESSION['username']) || !isset($_SESSION['password'])) {
 class Validation extends Database {
 
   /**
-   * Contruction function for calling the parent class constructor.
+   * Constructor function for calling the parent class constructor.
+   * 
    * @param mixed $username
    *   User's name.
    * @param mixed $password
@@ -36,20 +29,24 @@ class Validation extends Database {
 
   function valid() {
     if (isset($_POST['submit'])) {
-      $usr = $_POST['username'];
+      $user_name = $_POST['email'];
 
       // Checking for the existance of user.
-      $sql = "SELECT * FROM logindata WHERE user_name = '$usr'";
-      $result = $this->conn->query($sql);
+      $sql_select = "SELECT * FROM logindata WHERE user_name = '$user_name'";
+      $result = $this->conn->query($sql_select);
       $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
       if ($user) {
         // Check for matching user id and password.
-        if ($usr == $user['user_name'] &&
+        if ($user_name == $user['user_name'] &&
         password_verify($_POST['password'],$user['password'])) {
           $_SESSION['username']=$user['user_name'];
           $_SESSION['password']=$user['password'];
           // If all set redirect to the main page.
           header('location:welcome.php');
+        }
+        elseif(!password_verify($_POST['password'],$user['password'])){
+          $incorrectPassword = urlencode("Incorrect Password.");
+          header('location:login.php?incorrectPassword =' . $incorrectPassword);
         }
         else {
           header('location:login.php');
@@ -62,9 +59,3 @@ class Validation extends Database {
     }
   }
 }
-// Creating an object of Validation class.
-$login_check = new Validation($username, $password, $dbname);
-$login_check->valid();
-
-// Closing the Database.
-$login_check->closeDB();

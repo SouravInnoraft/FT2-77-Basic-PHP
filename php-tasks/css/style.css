@@ -7,7 +7,7 @@ body{
 }
 
 .container {
-  background-color: brown;
+  background-color: rgb(23, 168, 35);
   width: 500px;
   padding: 10px;
   border-radius: 20px;
@@ -16,6 +16,10 @@ body{
      width: 80%;
      margin: 0 auto;
    }
+}
+
+a{
+  text-decoration: none;
 }
 
 h1 {
@@ -89,4 +93,14 @@ input {
       background-color: tomato;
       color: antiquewhite;
       gap: 10px;
+}
+.button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  text-align: center;
 }

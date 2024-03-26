@@ -1,33 +1,24 @@
 <?php
 
-// Load Composer's autoloader.
-require './vendor/autoload.php';
+require 'Mailer.php';
+require '../creds.php';
+require '../Database.php';
 
-// Import PHPMailer classes into the global namespace.
-// These must be at the top of your script, not inside a function.
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+session_start();
 
 if (isset($_POST['submit'])) {
+  echo "Hello";
   $email = $_POST['email'];
-
-  // Create an instance.
-  $mail = new PHPMailer(true);
-  $mail->isSMTP();
-  require 'creds.php';
-  setUserData($mail);
-  try {
-    sendMail($mail,$email);
-
-    // Content.
-    sendMailData($mail);
-
-    // If mail is send display a success Message.
-    $mail->send();
-    echo 'Message has been sent';
+  $database=new Database($username,$password, $dbname);
+  $isExist=$database->isExistingUser($email);
+  if(!$isExist) {
+    $_SESSION['username']=$email;
+    $otp=rand(1000,9999);
+    $_SESSION['otp']=$otp;
+    $mail = new Mailer($email,$otp);
   }
-  catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+  else {
+    $UserExists = urlencode("User Exists");
+    header('location:../login.php?UserExists=' . $UserExists);
   }
 }

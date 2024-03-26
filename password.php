@@ -9,25 +9,19 @@
 <body>
   <?php
   require 'Messages.php';
-
-  session_start();
-  if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
-    header('location:welcome.php');
-  }
-
   ?>
-  <h2>Login Form</h2>
-  <form action="/ValidationCall.php" method="post">
+  <h2>Signup Form</h2>
+  <form action="/InsertionCall.php" method="post">
     <div class="container">
-      <label for="username"><b>Email id</b></label>
-      <input type="email" placeholder="Enter Email" name="email" required>
-      <label for="password"><b>Password</b></label>
+      <p>Please fill in your password to create an account.</p>
+      <hr>
+      <label for="password"><b>password</b></label>
       <input type="password" id='psw' placeholder="Enter Password" name="password" required>
-      <button type="submit" name='submit'>Login</button>
+      <label for="re-password"><b>Re-enter your password</b></label>
+      <input type="password" id='psw' placeholder="Enter Password" name="re-password" required>
+      <button type="submit" class="button" name="submit">sign up</button>
     </div>
-    <div class="container btn-container" style="background-color:#f1f1f1">
-      <a href="registration.php" class="button">signup</a>
-      <a href="passwordReset.php" class="button">Reset Password</a>
+    <p>Already have an account? <a href="login.php">Sign in</a>.</p>
     </div>
   </form>
   <div id="message">
