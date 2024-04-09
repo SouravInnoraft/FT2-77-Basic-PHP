@@ -40,5 +40,3 @@ switch ($url[1]) {
   default:
     $manage_url->default();
 }
-
-

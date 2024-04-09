@@ -73,7 +73,6 @@ class UrlManagment{
    */
   public function otp(){
     if (isset($_POST['submit'])) {
-       print_r($_POST['OTP']);
        otpcheck($_POST['OTP']);
     }
       require_once './View/OTP.php';

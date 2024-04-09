@@ -61,5 +61,4 @@ class Mailer {
       echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
     }
   }
-
 }

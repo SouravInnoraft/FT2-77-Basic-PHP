@@ -35,9 +35,9 @@ class FieldValidation{
     $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/';
     if (preg_match($pattern, $password)) {
         return TRUE;
-    } else {
+    }
+    else {
       return FALSE;
     }
   }
-
 }

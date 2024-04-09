@@ -45,5 +45,4 @@ require_once './GoogleAuth.php';
     <div class="circle c2"></div>
   </div>
 </body>
-
 </html>

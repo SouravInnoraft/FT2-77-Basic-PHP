@@ -34,4 +34,3 @@ function resetPassword(string $password_id){
    header("Location:/forget?message={$message}");
   }
 }
-

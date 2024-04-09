@@ -16,5 +16,3 @@ create table image_table (
   Email_id VARCHAR(255),
   FOREIGN KEY (Email_id) REFERENCES User (Email_id)
 );
-
-

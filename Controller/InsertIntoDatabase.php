@@ -47,4 +47,3 @@ function otpcheck(string $otp){
     header("Location:/?login_error={$login_error}");
   }
 }
-

@@ -31,4 +31,3 @@ if (isset($_GET['code'])) {
   session_start();
   $_SESSION['Email_id']=$email;
  }
-

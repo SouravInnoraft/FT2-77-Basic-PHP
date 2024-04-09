@@ -84,6 +84,5 @@ function sendMailDataToken(mixed $mail,string $token){
 
     Click <a href="http://site4.com/View/Reset.php?token=$token">here</a>
     to reset your password.
-
     END;
 }

@@ -22,8 +22,10 @@ class Read extends Database {
    *
    * @param string $Email_id
    *   User's Email.
+   *
+   * @return bool
    */
-  public function UserExist(string $Email_id) {
+  public function UserExist(string $Email_id):bool {
     $sql_select = $this->getConnection()->prepare("SELECT Email_id from
     User where Email_id = ?");
     $sql_select->execute([$Email_id]);
@@ -59,8 +61,10 @@ class Read extends Database {
    *
    * @param string $Email_id
    *   User's Email.
+   *
+   * @return  array
    */
-  public function getPost($count) {
+  public function getPost($count):array {
     if($count!=0){
     $sql_select = $this->getConnection()->prepare("SELECT
     u.User_firstname,
@@ -118,8 +122,10 @@ class Read extends Database {
    *
    * @param string $search
    *   User provided value to be searched.
+   *
+   * @return array
    */
-  public function getPostwithSearch(string $search) {
+  public function getPostwithSearch(string $search):array {
     $sql_select = $this->getConnection()->prepare("SELECT
     u.User_firstname,
     u.User_lastname,
@@ -163,9 +169,9 @@ class Read extends Database {
    * @param string $Password
    *   User entered password.
    *
-   * @return boolean
+   * @return bool
    */
-  public function isPasswordCorrect($Email_id, $Password) {
+  public function isPasswordCorrect($Email_id, $Password):bool{
     $sql_select = $this->getConnection()->prepare("SELECT * from
     User where Email_id = ?");
     $sql_select->execute([$Email_id]);
@@ -183,8 +189,10 @@ class Read extends Database {
    *
    * @param string $Email_id
    *   User provided email.
+   *
+   * @return  mixed
    */
-  public function generateToken($Email_id) {
+  public function generateToken($Email_id):mixed {
     $token = bin2hex(random_bytes(16));
     $token_hash = hash("sha256", $token);
     $expiry = date("Y-m-d H:i:s", time() + 60 * 2);
@@ -208,8 +216,11 @@ class Read extends Database {
    *
    * @param string $Password
    *   User's new password.
+   *
+   * @return bool
+   *
    */
-  public function resetPassword($token, $Email_id, $Password) {
+  public function resetPassword($token, $Email_id, $Password):bool {
     $token_hash = hash("sha256", $token);
     $sql_select = "SELECT * FROM User
         WHERE reset_token_hash = ?";

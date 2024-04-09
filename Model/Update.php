@@ -38,5 +38,4 @@ class Update extends Database {
      ");
      $update->execute();
   }
-
 }
