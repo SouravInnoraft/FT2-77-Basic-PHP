@@ -1,7 +1,7 @@
 let count = 2;
 
 // Ajax function to load data.
-$(document).on("click", '.load-data', function (e) {
+function loadData(e){
   $.ajax({
     url: "Controller/ajax-load.php",
     type: "POST",
@@ -13,10 +13,13 @@ $(document).on("click", '.load-data', function (e) {
       count += 2;
     }
   });
-});
+}
+
+// Function call.
+$(document).on("click", '.load-data', loadData);
 
 // Ajax function to make post.
-$(document).on("click", '#submit', function (e) {
+function addPost(e){
   e.preventDefault();
   let text = $('#text').val();
   let fd = new FormData();
@@ -33,10 +36,12 @@ $(document).on("click", '#submit', function (e) {
       $("#image, #text").val("");
     }
   });
-});
+}
+// Function call.
+$(document).on("click", '#submit', addPost);
 
 // Ajax function to load data of initial post when logged in.
-$(window).on('load', function (e) {
+function preloadData(){
   $.ajax({
     url: "Controller/ajax-preload.php",
     type: "POST",
@@ -44,10 +49,13 @@ $(window).on('load', function (e) {
       $(".content1").html(data);
     }
   });
-});
+}
+
+// Function call.
+$(window).on('load', preloadData);
 
 // Ajax function to search data.
-$('#search-name').on("keyup", function () {
+function searchData(){
   let search_term = $(this).val();
   $.ajax({
     url: 'Controller/ajax-search.php',
@@ -59,16 +67,21 @@ $('#search-name').on("keyup", function () {
       $('.total').html(data);
     }
   })
-});
+}
+
+// Function Call.
+$('#search-name').on("keyup", searchData);
 
 // Ajax function to load data.
-$('.update').on('click', function (e) {
+function displayForm(){
   e.preventDefault();
   $('.update-form').css({ "display": "block" });
-})
+}
+// Function call.
+$('.update').on('click',displayForm);
 
 // Ajax function to update profile information.
-$('#submit-update').on('click', function (e) {
+function updataData(){
   e.preventDefault;
   let first_name = $('#firstname').val();
   let last_name = $('#lastname').val();
@@ -83,11 +96,17 @@ $('#submit-update').on('click', function (e) {
       $('.in-b').html(data);
     }
   })
-});
+}
+
+// Function call.
+$('#submit-update').on('click', updataData);
 
 // Function to clear form fields.
-$('#submit-update').on('click', function (e) {
+function clearForm(){
   $('#firstname').val("");
   $('#lastname').val("");
   $('.update-form').css({ "display": "none" });
-})
+}
+
+// Function call.
+$('#submit-update').on('click',clearForm)

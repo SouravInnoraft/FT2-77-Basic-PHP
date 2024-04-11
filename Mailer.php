@@ -24,11 +24,11 @@ class Mailer {
    * @param string $email
    *   User provided email.
    */
-  function __construct($email) {
+  public function __construct($email) {
     $this->email=$email;
     $this->mail = new PHPMailer(true);
   }
-  function register($otp){
+  public function register($otp){
     $this->otp=$otp;
     $this->mail->isSMTP();
     setUserData($this->mail);
@@ -44,7 +44,7 @@ class Mailer {
       echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
     }
   }
-  function reset($token){
+  public function reset($token){
     $this->token=$token;
     $this->mail->isSMTP();
     setUserData($this->mail);

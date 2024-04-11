@@ -10,8 +10,11 @@ class Database {
    * Constructor function for creating sql connection.
    *
    * @param string $username
+   *   Database user name.
    * @param string $password
+   *   Database password
    * @param string $dbname
+   *   database name
    */
   function __construct(string $username, string $password, string $dbname) {
     $db_name="mysql:host=$this->servername;dbname=$dbname";
@@ -27,6 +30,9 @@ class Database {
 
   /**
    * Function to get connection.
+   *
+   * @return object
+   *   Returns database connection.
    */
   public function getConnection(){
     return $this->conn;

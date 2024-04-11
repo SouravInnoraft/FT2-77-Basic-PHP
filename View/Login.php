@@ -1,6 +1,4 @@
-<?php
-require_once './GoogleAuth.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -191,6 +191,7 @@ class Read extends Database {
    *   User provided email.
    *
    * @return  mixed
+   *   Token generated.
    */
   public function generateToken($Email_id):mixed {
     $token = bin2hex(random_bytes(16));

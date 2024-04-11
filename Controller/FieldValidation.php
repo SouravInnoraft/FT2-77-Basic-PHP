@@ -1,5 +1,5 @@
 <?php
-
+require './vendor/autoload.php';
 /**
  * Class to validate Email and Password.
  */

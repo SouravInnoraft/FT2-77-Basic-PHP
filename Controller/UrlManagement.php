@@ -5,7 +5,7 @@ require_once 'InsertionValidation.php';
 require_once 'InsertIntoDatabase.php';
 require_once 'ResetValidation.php';
 require_once 'ResetPassword.php';
-
+require_once './Core/Dotenv.php';
 /**
  * Class to manage Url
  */
@@ -21,6 +21,8 @@ class UrlManagment{
    * Function to redirect user.
    */
   public function Login(){
+    $this->session_validator->destroySession();
+    require_once './GoogleAuth.php';
     if (isset($_POST['submit'])) {
       $email_id=$_POST['Email_id'];
       $password=$_POST['Password'];
@@ -83,7 +85,16 @@ class UrlManagment{
    */
   public function home(){
     if($this->session_validator->isSessionSet()){
-      require_once './View/Home.php';
+      $env = new Dotenv();
+      // Creating object of Read class.
+      $select = new Read($_ENV['username'], $_ENV['password'], $_ENV['dbname']);
+      // Checking if user exists or not.
+      if (!$select->UserExist($_SESSION['Email_id'])) {
+          require_once './View/Home.php';
+      }
+      else{
+      header('location:/register');
+      }
     }
     else{
       require_once './View/Login.php';
@@ -95,8 +106,7 @@ class UrlManagment{
    */
   public function logout(){
     $this->session_validator->destroySession();
-    $message = urlencode('logged out successfully');
-    header("Location:/?message={$message}");
+    header("Location:/");
   }
 
   /**

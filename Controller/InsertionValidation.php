@@ -13,10 +13,13 @@ $env = new Dotenv();
  * Function validate insertion and send otp.
  *
  * @param string $email_id
+ *   User provided email
  * @param string $password_id
+ *   User's password
  * @param string $first_name
+ *   User's first name
  * @param string $last_name
- *
+ *   Iser's last name
  */
 function insert(string $email_id, string $password_id, string $first_name, string $last_name){
   // Creating a object of FieldValidation.

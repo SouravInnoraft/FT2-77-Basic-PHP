@@ -1,8 +1,7 @@
 // Function to toggle between dark and light mode.
 let dark=false;
-$(document).ready(function(){
-  $('.switch-mode').on('click',function(){
-    if(!dark){
+function switchMode(){
+   if(!dark){
     $('.navbar').addClass('dark-mode-navbar');
     $('body').addClass('dark-mode-body');
     }
@@ -11,5 +10,6 @@ $(document).ready(function(){
     $('body').removeClass('dark-mode-body');
     }
     dark=!dark;
- });
-});
+}
+// Function call.
+$(document).ready("click", '.switch-mode', switchMode);

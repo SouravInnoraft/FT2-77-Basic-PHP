@@ -6,7 +6,6 @@ require_once 'Core/Dotenv.php';
 $env = new Dotenv();
 // Init configuration.
 
-
 $clientID = $_ENV['clientID']; // Your client id.
 $clientSecret = $_ENV['clientSecret']; // Your client secret.
 $redirectUri = $_ENV['redirectUri'];
@@ -30,4 +29,5 @@ if (isset($_GET['code'])) {
   $name =  $google_account_info->name;
   session_start();
   $_SESSION['Email_id']=$email;
+  header('location:/home');
  }
