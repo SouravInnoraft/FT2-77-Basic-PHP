@@ -2,32 +2,59 @@
 
 require_once 'vendor/autoload.php';
 require_once 'Core/Dotenv.php';
-// Creating object of Dotenv class.
-$env = new Dotenv();
+
 // Init configuration.
+class GoogleAuthenticator {
+    private $clientID = "";
+    private $clientSecret = "";
+    private $redirectUri = "";
+    private $client;
 
-$clientID = $_ENV['clientID']; // Your client id.
-$clientSecret = $_ENV['clientSecret']; // Your client secret.
-$redirectUri = $_ENV['redirectUri'];
+    public function __construct() {
+        $env = new Dotenv();
+        $this->clientID = $_ENV['clientID'] ?? '';
+        $this->clientSecret = $_ENV['clientSecret'] ?? '';
+        $this->redirectUri = $_ENV['redirectUri'] ?? '';
 
-// Create Client Request to access Google API.
-$client = new Google\Client;
-$client->setClientId($clientID);
-$client->setClientSecret($clientSecret);
-$client->setRedirectUri($redirectUri);
-$client->addScope("email");
-$client->addScope("profile");
+        if (!empty($this->clientID) && !empty($this->clientSecret) && !empty($this->redirectUri)) {
+            $this->client = new Google\Client;
+            $this->client->setClientId($this->clientID);
+            $this->client->setClientSecret($this->clientSecret);
+            $this->client->setRedirectUri($this->redirectUri);
+            $this->client->addScope("email");
+            $this->client->addScope("profile");
+        } else {
+            throw new Exception("Missing client ID, client secret, or redirect URI.");
+        }
+    }
+    /**
+     * Function to Authorize url.
+     *
+     * @return void
+     */
+    public function getAuthorizationUrl() {
+        if (!empty($this->client)) {
+            return $this->client->createAuthUrl();
+        } else {
+            throw new Exception("Google client is not initialized.");
+        }
+    }
 
-// Authenticate code from Google OAuth Flow
-if (isset($_GET['code'])) {
-  $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-  $client->setAccessToken($token['access_token']);
-  // Get profile info
-  $google_oauth = new Google\Service\Oauth2($client);
-  $google_account_info = $google_oauth->userinfo->get();
-  $email =  $google_account_info->email;
-  $name =  $google_account_info->name;
-  session_start();
-  $_SESSION['Email_id']=$email;
-  header('location:/home');
- }
+    /**
+     * Function to Authenticate url.
+     *
+     * @return void
+     */
+    public function authenticate() {
+        if (isset($_GET['code'])) {
+            $token = $this->client->fetchAccessTokenWithAuthCode($_GET['code']);
+            $this->client->setAccessToken($token['access_token']);
+            $google_oauth = new Google\Service\Oauth2($this->client);
+            $google_account_info = $google_oauth->userinfo->get();
+            $email = $google_account_info->email;
+            session_start();
+            $_SESSION['Email_id'] = $email;
+            header('location:/home');
+        }
+    }
+}

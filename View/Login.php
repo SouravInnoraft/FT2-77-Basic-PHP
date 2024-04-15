@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +31,13 @@
           <p>
             <input type="submit" id="submit" name="submit" value="Login">
           </p>
-          <div class="google-login"><a href="<?php echo $client->createAuthUrl() ?>"><img src="../View/images/google-signin-button.png" width="270px"></a></p>
+          <div class="google-login"><a href="<?php
+           $googleAuthenticator = new GoogleAuthenticator(); // Create an instance of the GoogleAuthenticator class
+           $authUrl = $googleAuthenticator->getAuthorizationUrl(); // Get the authorization URL
+           echo $authUrl;
+           $auth=$googleAuthenticator->authenticate();
+           ?>">
+           <img src="../View/images/google-signin-button.png" width="270px"></a></p>
         </form>
       </main>
       <footer class="signup-footer">
@@ -43,4 +49,5 @@
     <div class="circle c2"></div>
   </div>
 </body>
+
 </html>

@@ -18,7 +18,7 @@ require_once 'Navbar.php';
     <button class="update">Update profile</button>
     <div class="inner-box update-form">
       <main class="signup-body">
-        <form action="" method=" post">
+        <form action="" method="post">
           <p>
             <label for="firstname">Update First Name</label>
             <input type="text" id="firstname" placeholder="Enter your First name" required>
@@ -37,8 +37,6 @@ require_once 'Navbar.php';
       <div>LastName: <?= $rows['User_lastname'] ?></div>
       <div>Email-id: <?= $rows['Email_id'] ?></div>
     </div>
-    <div class="circle c1"></div>
-    <div class="circle c2"></div>
     </main>
   </div>
   <script src="../View/script/Ajax.js"></script>

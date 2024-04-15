@@ -200,10 +200,10 @@ textarea {
 }
 
 .dark-mode-body{
-  .container{
+  .container,.outer-box{
     background-color: #282525;
     color: white;
-    .box{
+    .box,.inner-box{
       background-color: rgb(75 75 84);
     }
   }

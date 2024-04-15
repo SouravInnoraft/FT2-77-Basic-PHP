@@ -28,6 +28,9 @@ switch ($url[1]) {
   case 'logout':
     $manage_url->logout();
     break;
+  case 'helo':
+    require_once './View/helo.php';
+    break;
   case 'profile':
     $manage_url->profile();
     break;

@@ -12,9 +12,9 @@ class Database {
    * @param string $username
    *   Database user name.
    * @param string $password
-   *   Database password
+   *   Database password.
    * @param string $dbname
-   *   database name
+   *   Database name.
    */
   function __construct(string $username, string $password, string $dbname) {
     $db_name="mysql:host=$this->servername;dbname=$dbname";

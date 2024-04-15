@@ -73,16 +73,17 @@ function searchData(){
 $('#search-name').on("keyup", searchData);
 
 // Ajax function to load data.
-function displayForm(){
+function loadData(e) {
   e.preventDefault();
   $('.update-form').css({ "display": "block" });
-}
+};
+
 // Function call.
-$('.update').on('click',displayForm);
+$('.update').on('click', loadData);
 
 // Ajax function to update profile information.
-function updataData(){
-  e.preventDefault;
+function updataData(e){
+  e.preventDefault();
   let first_name = $('#firstname').val();
   let last_name = $('#lastname').val();
   $.ajax({
