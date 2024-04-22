@@ -13,13 +13,13 @@ $env = new Dotenv();
  * Function validate insertion and send otp.
  *
  * @param string $email_id
- *   User provided email
+ *   User provided email.
  * @param string $password_id
- *   User's password
+ *   User's password.
  * @param string $first_name
- *   User's first name
+ *   User's first name.
  * @param string $last_name
- *   Iser's last name
+ *   User's last name.
  */
 function insert(string $email_id, string $password_id, string $first_name, string $last_name){
   // Creating a object of FieldValidation.
@@ -41,7 +41,8 @@ function insert(string $email_id, string $password_id, string $first_name, strin
       $Mail = new Mailer($email_id);
       // Calling class method and passing in the Otp to be send.
       $Mail->register($OTP);
-    } else {
+    }
+    else {
       // Redirecting to login page id user already exists.
       $userExists = "UserExist";
       header("Location:/?userExists={$userExists}");

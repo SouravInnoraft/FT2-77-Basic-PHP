@@ -12,6 +12,7 @@ $env = new Dotenv();
  * Function to send reset token.
  *
  * @param string $email_id
+ *   User provided email.
  */
 function sendToken(string $email_id){
 

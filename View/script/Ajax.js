@@ -1,7 +1,7 @@
 let count = 2;
 
 // Ajax function to load data.
-function loadData(e){
+function loadMore(){
   $.ajax({
     url: "Controller/ajax-load.php",
     type: "POST",
@@ -16,7 +16,8 @@ function loadData(e){
 }
 
 // Function call.
-$(document).on("click", '.load-data', loadData);
+$('.load-more').on('click',loadMore);
+// $(document).on("click", '.load-data', loadData);
 
 // Ajax function to make post.
 function addPost(e){

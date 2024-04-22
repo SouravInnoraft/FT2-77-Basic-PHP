@@ -1,7 +1,8 @@
 create table User (
-Email_id VARCHAR(255) PRIMARY KEY,
-User_firstname VARCHAR(50),
-User_lastname VARCHAR(50),
+User_id INT AUTO_INCREMENT PRIMARY KEY,
+email_id VARCHAR(255) UNIQUE,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
 Password VARCHAR(255)
 );
 ALTER TABLE User

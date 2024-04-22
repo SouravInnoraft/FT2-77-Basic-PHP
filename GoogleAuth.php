@@ -23,7 +23,8 @@ class GoogleAuthenticator {
             $this->client->setRedirectUri($this->redirectUri);
             $this->client->addScope("email");
             $this->client->addScope("profile");
-        } else {
+        }
+        else {
             throw new Exception("Missing client ID, client secret, or redirect URI.");
         }
     }
@@ -35,7 +36,8 @@ class GoogleAuthenticator {
     public function getAuthorizationUrl() {
         if (!empty($this->client)) {
             return $this->client->createAuthUrl();
-        } else {
+        }
+        else {
             throw new Exception("Google client is not initialized.");
         }
     }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,16 @@
   <link rel="stylesheet" href="./View/css/navbar.css">
   <link rel="stylesheet" href="../View/css/style.css?<?= time() ?>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
-<?php
-require_once 'Navbar.php';
+  <?php
+  require_once 'Navbar.php';
 
-?>
+  ?>
+</head>
+
 <body>
   <div class="outer-box">
     <button class="update">Update profile</button>
+    <h1>Nazaaarrr aaaaallllliiiii</h1>
     <div class="inner-box update-form">
       <main class="signup-body">
         <form action="" method="post">
@@ -42,4 +45,5 @@ require_once 'Navbar.php';
   <script src="../View/script/Ajax.js"></script>
   <script src="../View/script/script.js"></script>
 </body>
+
 </html>

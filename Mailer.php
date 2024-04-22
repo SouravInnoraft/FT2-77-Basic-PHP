@@ -14,6 +14,17 @@ use PHPMailer\PHPMailer\Exception;
  * A class to Send mail to a user for otp verification.
  */
 class Mailer {
+
+  /**
+   * @var string $email
+   *   Stores User's email id.
+   * @var mixed $mail
+   *   Stores Mail object.
+   * @var string $otp
+   *   Stores User provided otp.
+   * @var string $token
+   *   Stores token generated.
+   */
   private $email;
   private $mail;
   private $otp;
