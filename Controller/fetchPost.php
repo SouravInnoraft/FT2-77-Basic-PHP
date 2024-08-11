@@ -12,4 +12,3 @@ $select = new Read($_ENV['username'], $_ENV['password'], $_ENV['dbname']);
 
 // Creating an object of Read class.
 $rows = $select->getPost($count);
-

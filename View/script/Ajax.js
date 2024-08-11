@@ -1,5 +1,5 @@
-let count = 2;
 
+let count=10;
 // Ajax function to load data.
 function loadMore(){
   $.ajax({
@@ -9,15 +9,20 @@ function loadMore(){
       count: count
     },
     success: function (data) {
-      $(".content").append(data);
-      count += 2;
+      if(data){
+        $(".content").append(data);
+        count+=5;
+      }
+    },
+    error: function(){
+      $('.load-more').html('finished');
+      $('.load-more').prop('disabled', true);
     }
   });
 }
 
 // Function call.
 $('.load-more').on('click',loadMore);
-// $(document).on("click", '.load-data', loadData);
 
 // Ajax function to make post.
 function addPost(e){

@@ -14,7 +14,7 @@ $env = new Dotenv();
  * @param string $email_id
  *   User provided email.
  */
-function sendToken(string $email_id){
+function sendToken(string $email_id) {
 
 // Creating an object of Read class.
 $select = new Read($_ENV['username'], $_ENV['password'], $_ENV['dbname']);

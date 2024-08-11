@@ -5,14 +5,14 @@ $count=$_POST['count'];
 require_once '../Controller/fetchPost.php';
 
 // Checking whether Data exists or not.
-if(count($rows)){
+if(count($rows)) {
 foreach ($rows as $row) {
 ?>
   <div class="container">
     <div class="box-container">
       <div class="box">
         <?php
-        if($row['image']!=null){
+        if($row['image']!=null) {
         ?>
         <div class="Home-image">
           <?php echo '<img src="data:image;base64,' . base64_encode($row['image']) . '" >'; ?>

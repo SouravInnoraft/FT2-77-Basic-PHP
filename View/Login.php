@@ -38,6 +38,7 @@
            $auth=$googleAuthenticator->authenticate();
            ?>">
            <img src="../View/images/google-signin-button.png" width="270px"></a></p>
+          </div>
         </form>
       </main>
       <footer class="signup-footer">

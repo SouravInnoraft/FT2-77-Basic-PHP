@@ -23,7 +23,7 @@ class Mailer {
    * @var string $otp
    *   Stores User provided otp.
    * @var string $token
-   *   Stores token generated.
+   *   Stores token generated.``1 
    */
   private $email;
   private $mail;

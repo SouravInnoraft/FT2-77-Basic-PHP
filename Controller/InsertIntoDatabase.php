@@ -20,8 +20,6 @@ function otpcheck(string $otp){
 
     // Creating an object of Insertion class.
     $insert = new Insertion($_ENV['username'], $_ENV['password'],$_ENV['dbname']);
-
-    print_r($_SESSION['Password']);
     // Calling class method for inserting user data into database.
     $insert->insertIntoDatabase(
       $_SESSION['Email_id'],

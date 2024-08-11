@@ -83,7 +83,7 @@ class Read extends Database {
     i.Email_id=u.Email_id
     ORDER BY
     i.time
-    LIMIT $count,2
+    LIMIT $count,5
     ");
     }
     else{
@@ -104,7 +104,7 @@ class Read extends Database {
     i.Email_id=u.Email_id
     ORDER BY
     i.time
-    LIMIT 2
+    LIMIT 10
     ");
     }
     $sql_select->execute();
